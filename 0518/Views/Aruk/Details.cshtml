@@ -1,0 +1,43 @@
+﻿@model _0518.Models.Aru
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<style>
+    body {
+        background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm222batch5-kul-03.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=08fbfb223887d33030e97becaf4e20dc");
+        background-size: cover;
+    }
+</style>
+
+<h1>Részletek</h1>
+
+<div>
+    <h4>Aru</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Megnevezes)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Megnevezes)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Beszallito)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Beszallito)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ar)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id"class="btn btn-warning" >🖋 Szerkesztés</a> |
+    <a asp-action="Index"class="btn btn-primary" >◀ Vissza</a>
+</div>

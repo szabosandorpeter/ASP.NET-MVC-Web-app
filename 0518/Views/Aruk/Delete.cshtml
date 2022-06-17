@@ -1,0 +1,46 @@
+﻿@model _0518.Models.Aru
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<style>
+    body {
+        background-image: url("https://media.istockphoto.com/vectors/abstract-red-geometric-background-vector-id989949666?k=20&m=989949666&s=170667a&w=0&h=QFB_U90wZ1WOPYwQmQySwyMNQHEMIsrj1fDI_7oYQTE=");
+        background-size: cover;
+    }
+</style>
+
+<h1>Törlés</h1>
+
+<h3>Biztos hogy törölni akarod? 😒</h3>
+<div>
+    <h4>Aru</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Megnevezes)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Megnevezes)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Beszallito)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Beszallito)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ar)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Törlés" class="btn btn-danger" /> |
+        <a asp-action="Index"class="btn btn-primary" >◀ Visszaa</a>
+    </form>
+</div>

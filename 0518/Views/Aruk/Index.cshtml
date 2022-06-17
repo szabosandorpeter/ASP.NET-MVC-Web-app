@@ -1,0 +1,65 @@
+﻿@model _0518.Models.Arukeres
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>   
+   body {
+        background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm222batch5-kul-03.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=08fbfb223887d33030e97becaf4e20dc");
+        background-size:cover;   
+        }
+</style>
+
+<h1>Termék Kereső</h1>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Új létrehozása</a>
+</p>
+<form asp-controller="Aruk" asp-action="Index" method="get">
+    Megnevezés:
+    <input asp-for="Megnevezes">
+
+    Beszállító:
+    <select asp-for="Beszallito" asp-items="Model.BeszallitoLista">
+        <option value="">Összes</option>
+    </select>
+    <input type="submit" value="Keresés" class="btn btn-success">
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AruLista[0].Megnevezes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AruLista[0].Beszallito)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AruLista[0].Ar)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.AruLista)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Megnevezes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Beszallito)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ar)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary" >🖋 Szerkesztés</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id"class="btn btn-success" >💬 Részletek</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id"class="btn btn-danger" >❌ Törlés</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
